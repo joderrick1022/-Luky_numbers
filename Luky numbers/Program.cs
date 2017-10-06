@@ -10,20 +10,21 @@ namespace Luky_numbers
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("what would you like your low number to be in number range");
-            int userLowNum = int.Parse(Console.ReadLine());
+            //Console.WriteLine("what would you like your low number to be in number range");
+            //int userLowNum = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("what would you like your high number to be in number range");
-            int userHighNum = int.Parse(Console.ReadLine());
+            //Console.WriteLine("what would you like your high number to be in number range");
+            //int userHighNum = int.Parse(Console.ReadLine());
 
-            
+            Console.WriteLine("guess the 6 numbers you thinks will be the lucky numbers generated within the number range you chose.");
             int[] userNumbers = new int[6];
-            for(int i = 0; i < userNumbers.Length-1; i++)
+            for(int i = 0; i < userNumbers.Length; i++)
             {
-                Console.WriteLine("guess the 6 numbers you thinks will be the lucky numbers generated within the number range you chose.");
+                
 
-                int pickSix = int.Parse(Console.ReadLine());
-                Console.ReadLine();
+                int six = int.Parse(Console.ReadLine());
+                userNumbers[i] = six;
+
             }
 
             //Random rand = new Random();
