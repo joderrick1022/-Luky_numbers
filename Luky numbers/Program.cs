@@ -24,7 +24,12 @@ namespace Luky_numbers
 
                 int six = int.Parse(Console.ReadLine());
                 userNumbers[i] = six;
+                
 
+            }
+            for (int i = 0; i < userNumbers.Length; i++)
+            {
+                Console.WriteLine("Your lucky numbers are : " + userNumbers[i]);
             }
 
             //Random rand = new Random();
@@ -101,9 +106,9 @@ namespace Luky_numbers
             //     lucky_Numbers[number] = rand.Next(userLowNum, userHighNum) ;
             //    Console.WriteLine("{0} ", lucky_Numbers[number]);
 
-               
 
-            }
+
+        }
 
         }
 
