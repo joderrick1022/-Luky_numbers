@@ -31,12 +31,15 @@ namespace Luky_numbers
             }
 
 
-            double jackpot = 100000000.00;
+            //double jackpot = 100000000.00;
 
-            Random rand = new Random();
-            for (int number = 1; number <= 6; number++)
+            Random luckyNumber = new Random();
+            int[] luckyData = new int[6];
+            for (int number = 0; number < 6; number++)
             {
-                int randomNumber = rand.Next(49) + 1;
+                
+                int randomNumber = luckyNumber.Next(userLowNum,userHighNum);
+                luckyData[number] = randomNumber;
                 Console.WriteLine("Lucky Numbers :" + randomNumber);
 
             }
