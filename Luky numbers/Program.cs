@@ -10,25 +10,40 @@ namespace Luky_numbers
     {
         static void Main(string[] args)
         {
+
+            int userLowNum = 0;
+            int userHighNum = 0;
+
             Console.WriteLine("what would you like your low number to be in number range");
-            int userLowNum = int.Parse(Console.ReadLine());
+             userLowNum = int.Parse(Console.ReadLine());
 
             Console.WriteLine("what would you like your high number to be in number range");
-            int userHighNum = int.Parse(Console.ReadLine());
+             userHighNum = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("guess the 6 numbers you thinks will be the lucky numbers generated within the number range you chose.");
+
+
+
 
 
             int[] userNumbers = new int[6];
-            for (int i = 0; i < userNumbers.Length; i++)
+            Console.WriteLine("pick 6 numbers with in the two numbers you chose,\n that you think will be generated in Lucky Number generator");
+
+
+            for (int i = 0; i < 6 ; i++)
             {
 
 
-                int six = int.Parse(Console.ReadLine());
-                userNumbers[i] = six;
+                userNumbers[i] = int.Parse(Console.ReadLine());
 
+                while (userNumbers[i] < userLowNum || userNumbers[i] > userHighNum) 
+                {
+                    Console.WriteLine("please pick again");
+                    Console.WriteLine("pick a number in range of the two you picked!");
+                    userNumbers[i] = int.Parse(Console.ReadLine());
+                }
 
             }
+            
 
 
             //double jackpot = 100000000.00;
