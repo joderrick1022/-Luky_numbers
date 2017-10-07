@@ -77,14 +77,14 @@ namespace Luky_numbers
                     {
                         if (i == a)
                         {
-                             correct++;
+                            correct++;
                         }
                     }
-
+                }
                     Console.WriteLine("you have " +correct);
                     Console.WriteLine("play Again");
-                  string  playagain = Console.ReadLine();
-                }
+                    playagain = Console.ReadLine();
+                
             }while(playagain == "yes");
 
             Console.WriteLine("Thank you have a day");
