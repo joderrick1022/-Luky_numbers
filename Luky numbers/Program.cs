@@ -18,31 +18,27 @@ namespace Luky_numbers
                 int userLowNum = 0;
                 int userHighNum = 0;
 
+                //asking user for numbers neede for game.
+                Console.WriteLine(" \t \t \t welcome to lucky numbers!!");
+                Console.WriteLine();
+                Console.WriteLine();
 
-
-
-
-
-
-                Console.WriteLine("what would you like your low number to be in number range");
+                Console.WriteLine(" \t What would you like your low number to be in number range");
                 userLowNum = int.Parse(Console.ReadLine());
+                Console.WriteLine();
+                Console.WriteLine();
 
-                Console.WriteLine("what would you like your high number to be in number range");
+                Console.WriteLine("\t What would you like your high number to be in number range");
                 userHighNum = int.Parse(Console.ReadLine());
-
-
-
-
-
+                Console.WriteLine(  );
+                Console.WriteLine();
 
                 int[] userNumbers = new int[6];
-                Console.WriteLine("pick 6 numbers with in the two numbers you chose,\n that you think will be generated in Lucky Number generator");
+                Console.WriteLine("\t pick 6 numbers with in (" + userLowNum + ", " + userHighNum + ") \n that you think will be generated in Lucky Number generator");
                 //taking users input and storing it in array
 
                 for (int i = 0; i < 6; i++)
                 {
-
-
                     userNumbers[i] = int.Parse(Console.ReadLine());
                     //this is here incase user is outside of range
                     while (userNumbers[i] < userLowNum || userNumbers[i] > userHighNum)
@@ -54,24 +50,18 @@ namespace Luky_numbers
 
                 }
 
-
-
-
-
-                decimal  correct = 0;
+                float  correct = 0;
                 Random luckyNumber = new Random();
                 int[] luckyData = new int[6];
                 for (int number = 0; number < 6; number++)
                 {
-
+                    
 
                     int randomNumber = luckyNumber.Next(userLowNum, userHighNum);
                     luckyData[number] = randomNumber;
                     Console.WriteLine("Lucky Numbers :" + randomNumber);
-                        
-                    
                 }
-                foreach (int i in userNumbers)
+                foreach (int i in userNumbers)//comparing user picks to random picks
                 {
                     foreach (int a in luckyData)
                     {
@@ -84,20 +74,24 @@ namespace Luky_numbers
                 }
 
 
-                decimal jackpot = 48000.00m;
+                float jackpot = 48000.00f;
+                Console.WriteLine();
+                Console.WriteLine();
 
 
 
-                Console.WriteLine("you have " + correct);
-               
-                decimal winnings = (correct/6) * jackpot;
-                Console.WriteLine("Your prize winnings are $" + winnings);
-                Console.WriteLine("play Again");
-                playagain = Console.ReadLine();
+                Console.WriteLine(" \t you have " + correct + " corrext.");
+                Console.WriteLine();
+                Console.WriteLine();
+
+                 float winnings = (correct/6f) * jackpot;
+                Console.WriteLine(" \t Your prize winnings are $" + winnings);
+                Console.WriteLine(" \t play Again");
+                playagain = Console.ReadLine().Trim().ToLower();
 
             } while (playagain == "yes");
 
-            Console.WriteLine("Thanks for plaing!");
+            Console.WriteLine(" \t \t Thanks for plaing!");// this was the way the directions wanted me to end it
 
 
 
