@@ -56,20 +56,20 @@ namespace Luky_numbers
 
 
 
-                //double jackpot = 100000000.00;
 
 
-                int correct = 0;
+                decimal  correct = 0;
                 Random luckyNumber = new Random();
                 int[] luckyData = new int[6];
                 for (int number = 0; number < 6; number++)
                 {
 
+
                     int randomNumber = luckyNumber.Next(userLowNum, userHighNum);
                     luckyData[number] = randomNumber;
                     Console.WriteLine("Lucky Numbers :" + randomNumber);
-
-
+                        
+                    
                 }
                 foreach (int i in userNumbers)
                 {
@@ -80,24 +80,25 @@ namespace Luky_numbers
                             correct++;
                         }
                     }
+
                 }
-                    Console.WriteLine("you have " +correct);
-                    Console.WriteLine("play Again");
-                    playagain = Console.ReadLine();
-                
-            }while(playagain == "yes");
 
-            Console.WriteLine("Thank you have a day");
-                    
-                    
-                    
-                    
-                        
+
+                decimal jackpot = 48000.00m;
 
 
 
+                Console.WriteLine("you have " + correct);
+               
+                decimal winnings = (correct/6) * jackpot;
+                Console.WriteLine("Your prize winnings are $" + winnings);
+                Console.WriteLine("play Again");
+                playagain = Console.ReadLine();
 
-            
+            } while (playagain == "yes");
+
+            Console.WriteLine("Thanks for plaing!");
+
 
 
         }
