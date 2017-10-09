@@ -43,10 +43,11 @@ namespace Luky_numbers
                     //this is here incase user is outside of range
                     while (userNumbers[i] < userLowNum || userNumbers[i] > userHighNum)
                     {
-                        Console.WriteLine("please pick again");
+                        Console.WriteLine("please pick again"); 
                         Console.WriteLine("pick a number in range of the two you picked!");
                         userNumbers[i] = int.Parse(Console.ReadLine());
                     }
+
 
                 }
 
@@ -56,10 +57,16 @@ namespace Luky_numbers
                 for (int number = 0; number < 6; number++)
                 {
                     
-
                     int randomNumber = luckyNumber.Next(userLowNum, userHighNum);
+                    while (luckyData.Contains(randomNumber))
+                    {
+                        randomNumber = luckyNumber.Next(userLowNum, userHighNum);
+                        
+                    }
                     luckyData[number] = randomNumber;
                     Console.WriteLine("Lucky Numbers :" + randomNumber);
+
+
                 }
                 foreach (int i in userNumbers)//comparing user picks to random picks
                 {
@@ -69,6 +76,7 @@ namespace Luky_numbers
                         {
                             correct++;
                         }
+                        
                     }
 
                 }
@@ -80,9 +88,13 @@ namespace Luky_numbers
 
 
 
-                Console.WriteLine(" \t you have " + correct + " corrext.");
+                Console.WriteLine(" \t you have " + correct + " correct.");
                 Console.WriteLine();
                 Console.WriteLine();
+
+                Console.WriteLine("\a");
+                Console.WriteLine("\a");
+                Console.WriteLine("\a");
 
                  float winnings = (correct/6f) * jackpot;
                 Console.WriteLine(" \t Your prize winnings are $" + winnings);
